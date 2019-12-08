@@ -26,13 +26,22 @@ pipeline {
                 echo " ============== mvn package =================="
             }
         }
-        stage("mvn deploy") {
+        stage("mvn deploy_develop") {
             when {
                expression { GIT_BRANCH ==~ /develop/ }
             }
 
             steps {
-                echo " ============== mvn deploy =================="
+                echo " ============== mvn deploy develop =================="
+            }
+        }
+        stage("mvn deploy_master") {
+            when {
+               expression { GIT_BRANCH ==~ /master/ }
+            }
+
+            steps {
+                echo " ============== mvn deploy master =================="
             }
         }
     }
