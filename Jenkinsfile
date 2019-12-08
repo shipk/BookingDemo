@@ -53,7 +53,7 @@ pipeline {
             }
             steps {
                 echo " ============== mvn deploy master =================="
-                sh "setsid ./bd_stop_n_start_war.sh &"
+                sh "setsid ./bd_stop_n_start_war.sh"
                 //sh "java -jar target/BookingDemo-0.0.1-SNAPSHOT.war"
             }
         }
