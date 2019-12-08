@@ -1,7 +1,6 @@
 #!groovy
 properties([disableConcurrentBuilds()])
 pipeline {
-    def mvnHome = tool 'MAVEN3'
 
     agent { 
         label 'master_agent'
@@ -13,6 +12,8 @@ pipeline {
     }
    
     stages {
+        def mvnHome = tool 'MAVEN3'
+
         stage("mvn clean") {
             steps {
                 echo " ============== mvn clean =================="
