@@ -37,17 +37,21 @@ pipeline {
         }
         stage("mvn package develop") {
             when {
-               expression { GIT_BRANCH ==~ /develop/ }
+                expression { GIT_BRANCH ==~ /develop/ }
             }
             steps {
                 echo " ============== mvn package master =================="
                 sh "mvn package"
             }
+        }
+
+        stage("mvn deploy_master") {
             when {
                expression { GIT_BRANCH ==~ /master/ }
             }
             steps {
                 echo " ============== mvn deploy master =================="
+                sh "java -jar target/BookingDemo-0.0.1-SNAPSHOT.war"
             }
         }
         stage("mvn deploy_develop") {

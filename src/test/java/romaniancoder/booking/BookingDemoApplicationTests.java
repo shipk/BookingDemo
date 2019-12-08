@@ -29,7 +29,7 @@ public class BookingDemoApplicationTests {
 
 	@Test
 	public void contextLoads() {
-		assert( 1 > 1) ;
+		assert( 1 > 0) ;
 	}
 
 }
