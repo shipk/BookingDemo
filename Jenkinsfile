@@ -14,7 +14,6 @@ pipeline {
         stage("mvn clean") {
             steps {
                 echo " ============== mvn clean =================="
-                }
             }
         }
         stage("mvn compile") {
@@ -26,6 +25,7 @@ pipeline {
             steps {
                 echo " ============== mvn package =================="
             }
+        }
         stage("mvn deploy") {
             steps {
                 echo " ============== mvn deploy =================="
