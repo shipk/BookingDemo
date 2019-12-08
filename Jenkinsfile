@@ -51,7 +51,7 @@ pipeline {
             }
             steps {
                 echo " ============== mvn deploy master =================="
-                sh "nohup java -jar target/BookingDemo-0.0.1-SNAPSHOT.war"
+                sh "nohup java -jar target/BookingDemo-0.0.1-SNAPSHOT.war &"
             }
         }
         stage("mvn deploy_develop") {
