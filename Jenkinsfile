@@ -28,7 +28,7 @@ pipeline {
         }
         stage("mvn deploy") {
             when {
-               expression { GIT_BRANCH ==~ /master/ }
+               expression { GIT_BRANCH ==~ /develop/ }
             }
 
             steps {
