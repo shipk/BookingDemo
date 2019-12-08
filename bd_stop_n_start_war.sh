@@ -7,10 +7,10 @@ then
 else
   echo 'Web server is not running'
 fi
-#sleep 5
+sleep 5
 echo `pwd`
 cd /home/kshipkov/github/BookingDemo
 echo `pwd`
-java -jar /home/kshipkov/github/BookingDemo/target/BookingDemo-0.0.1-SNAPSHOT.war
+nohup java -jar /home/kshipkov/github/BookingDemo/target/BookingDemo-0.0.1-SNAPSHOT.war &
 sleep 30
 echo Started web server, port 8082

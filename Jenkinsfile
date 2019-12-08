@@ -27,7 +27,7 @@ pipeline {
             }
         }
         */
-        /*
+        
         stage("mvn package master") {
             when {
                expression { GIT_BRANCH ==~ /master/ }
@@ -46,7 +46,7 @@ pipeline {
                 sh "mvn clean package"
             }
         }
-        */
+        
         stage("mvn deploy_master") {
             when {
                expression { GIT_BRANCH ==~ /master/ }
