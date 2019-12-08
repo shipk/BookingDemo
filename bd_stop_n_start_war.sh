@@ -11,6 +11,6 @@ sleep 5
 echo `pwd`
 cd /home/kshipkov/github/BookingDemo
 echo `pwd`
-/usr/bin/nohup /usr/bin/java -jar /home/kshipkov/github/BookingDemo/target/BookingDemo-0.0.1-SNAPSHOT.war
+`/usr/bin/nohup /usr/bin/java -jar /home/kshipkov/github/BookingDemo/target/BookingDemo-0.0.1-SNAPSHOT.war &`
 sleep 10
 echo Started web server, port 8082
