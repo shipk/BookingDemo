@@ -41,7 +41,7 @@ pipeline {
             }
             steps {
                 echo " ============== mvn package master =================="
-                sh "mvn package -Dmaven.test.skip=true"
+                sh "mvn package"
             }
         }
 
