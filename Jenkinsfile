@@ -3,11 +3,9 @@ properties([disableConcurrentBuilds()])
 
 pipeline {
 
-    node {
-      def mvnHome = tool 'MAVEN3'
     agent { 
         label 'master_agent'
-        }
+    }
     triggers { pollSCM('* * * * *')}
     options {
         buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
@@ -18,7 +16,7 @@ pipeline {
         stage("mvn clean") {
             steps {
                 echo " ============== mvn clean =================="
-                sh "'${mvnHome}/bin/mvn' clean"
+                sh "mvn clean"
             }
         }
         stage("mvn compile") {
@@ -47,6 +45,5 @@ pipeline {
                 echo " ============== mvn deploy master =================="
             }
         }
-    }
     }
 }
