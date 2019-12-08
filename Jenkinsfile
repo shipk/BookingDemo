@@ -13,6 +13,7 @@ pipeline {
     }
    
     stages {
+        /*
         stage("mvn clean") {
             steps {
                 echo " ============== mvn clean =================="
@@ -25,14 +26,14 @@ pipeline {
                 sh "mvn compile"
             }
         }
-
+        */
         stage("mvn package master") {
             when {
                expression { GIT_BRANCH ==~ /master/ }
             }
             steps {
                 echo " ============== mvn package master =================="
-                sh "mvn package -Dmaven.test.skip=true"
+                sh "mvn clean package -Dmaven.test.skip=true"
             }
         }
         stage("mvn package develop") {
@@ -41,7 +42,7 @@ pipeline {
             }
             steps {
                 echo " ============== mvn package master =================="
-                sh "mvn package"
+                sh "mvn clean package"
             }
         }
 
@@ -52,14 +53,6 @@ pipeline {
             steps {
                 echo " ============== mvn deploy master =================="
                 sh "./bd_stop_n_start_war.sh"
-            }
-        }
-        stage("mvn deploy_develop") {
-            when {
-               expression { GIT_BRANCH ==~ /develop/ }
-            }
-            steps {
-                echo " ============== mvn deploy develop =================="
             }
         }
     }

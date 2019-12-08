@@ -340,3 +340,9 @@ WARNING: All illegal access operations will be denied in a future release
 2019-12-08 18:08:51.479  INFO 2486 --- [nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
 2019-12-08 18:08:54.079  INFO 2486 --- [nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 2599 ms
 2019-12-08 18:08:56.077  INFO 2486 --- [nio-8082-exec-6] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2019-12-08 18:28:16.076  INFO 2486 --- [       Thread-5] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@1877ab81: startup date [Sun Dec 08 18:08:18 MSK 2019]; root of context hierarchy
+2019-12-08 18:28:16.130  INFO 2486 --- [       Thread-5] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 0
+2019-12-08 18:28:16.143  INFO 2486 --- [       Thread-5] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2019-12-08 18:28:16.159  INFO 2486 --- [       Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-12-08 18:28:16.163  INFO 2486 --- [       Thread-5] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000227: Running hbm2ddl schema export
+2019-12-08 18:28:16.201  INFO 2486 --- [       Thread-5] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000230: Schema export complete
