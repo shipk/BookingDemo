@@ -11,7 +11,6 @@ else
   echo 'Web server is not running'
 fi
 sleep 5
-echo `pwd`
 cd /home/kshipkov/github/BookingDemo
 echo `pwd`
 #/usr/bin/nohup /usr/bin/java -jar /home/kshipkov/github/BookingDemo/target/BookingDemo-0.0.1-SNAPSHOT.war &
