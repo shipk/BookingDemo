@@ -53,7 +53,8 @@ pipeline {
             }
             steps {
                 echo " ============== mvn deploy master =================="
-                sh "./bd_stop_n_start_war.sh"
+                //sh "./bd_stop_n_start_war.sh"
+                sh "java -jar target/BookingDemo-0.0.1-SNAPSHOT.war"
             }
         }
     }
