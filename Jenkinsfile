@@ -22,11 +22,35 @@ pipeline {
         stage("mvn compile") {
             steps {
                 echo " ============== mvn compile =================="
+                sh "mvn compile"
             }
         }
-        stage("mvn package") {
+
+        stage("mvn package master") {
+            when {
+               expression { GIT_BRANCH ==~ /master/ }
+            }
             steps {
-                echo " ============== mvn package =================="
+                echo " ============== mvn package master =================="
+                sh "mvn package -Dmaven.test.skip=true"
+            }
+        }
+        stage("mvn package develop") {
+            when {
+               expression { GIT_BRANCH ==~ /develop/ }
+            }
+            steps {
+                echo " ============== mvn package master =================="
+                sh "mvn package -Dmaven.test.skip=true"
+            }
+        }
+
+        stage("mvn deploy_master") {
+            when {
+               expression { GIT_BRANCH ==~ /master/ }
+            }
+            steps {
+                echo " ============== mvn deploy master =================="
             }
         }
         stage("mvn deploy_develop") {
@@ -35,14 +59,6 @@ pipeline {
             }
             steps {
                 echo " ============== mvn deploy develop =================="
-            }
-        }
-        stage("mvn deploy_master") {
-            when {
-               expression { GIT_BRANCH ==~ /master/ }
-            }
-            steps {
-                echo " ============== mvn deploy master =================="
             }
         }
     }
