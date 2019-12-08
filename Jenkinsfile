@@ -43,9 +43,6 @@ pipeline {
                 echo " ============== mvn package master =================="
                 sh "mvn package"
             }
-        }
-
-        stage("mvn deploy_master") {
             when {
                expression { GIT_BRANCH ==~ /master/ }
             }
