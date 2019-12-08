@@ -1,7 +1,5 @@
 #!groovy
 properties([disableConcurrentBuilds()])
-node {
-   def mvnHome = tool 'MAVEN3'
 
 pipeline {
 
@@ -14,6 +12,8 @@ pipeline {
         timestamps()
     }
    
+    node {
+      def mvnHome = tool 'MAVEN3'
     stages {
         stage("mvn clean") {
             steps {
@@ -48,5 +48,5 @@ pipeline {
             }
         }
     }
-}
+    }
 }
