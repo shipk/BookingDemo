@@ -3,6 +3,8 @@ properties([disableConcurrentBuilds()])
 
 pipeline {
 
+    node {
+      def mvnHome = tool 'MAVEN3'
     agent { 
         label 'master_agent'
         }
@@ -12,8 +14,6 @@ pipeline {
         timestamps()
     }
    
-    node {
-      def mvnHome = tool 'MAVEN3'
     stages {
         stage("mvn clean") {
             steps {
