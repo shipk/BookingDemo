@@ -12,10 +12,6 @@ pipeline {
     }
    
     stages {
-        stage("Checkout Code") { 
-            echo " ============== checkout code =================="
-            git 'https://github.com/shipk/java-maven-calculator-web-app.git'
-        }
         stage("mvn clean") {
             steps {
                 echo " ============== mvn clean =================="
