@@ -11,7 +11,7 @@ else
   echo 'Web server is not running'
 fi
 sleep 5
-cd /home/kshipkov/github/BookingDemo
+cd /home/kvs/github/BookingDemo
 echo `pwd`
 #/usr/bin/nohup /usr/bin/java -jar /home/kshipkov/github/BookingDemo/target/BookingDemo-0.0.1-SNAPSHOT.war &
 /usr/bin/java -jar /var/lib/jenkins/workspace/BookingDemo_master/target/BookingDemo-0.0.1-SNAPSHOT.war > nohup1.out 2>&1
