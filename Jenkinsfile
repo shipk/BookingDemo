@@ -1,7 +1,8 @@
 #!groovy
 properties([disableConcurrentBuilds()])
-def mvnHome = tool 'MAVEN3'
 pipeline {
+    def mvnHome = tool 'MAVEN3'
+
     agent { 
         label 'master_agent'
         }
