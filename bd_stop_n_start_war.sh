@@ -8,5 +8,5 @@ else
   echo 'Web server is not running'
 fi
 sleep 5
-/usr/bin/java -jar target/BookingDemo-0.0.1-SNAPSHOT.war > /tmp/BookingDemo_master.out 2>&1
+/usr/bin/java -jar target/BookingDemo-0.0.1-SNAPSHOT.war > /tmp/BookingDemo_master.out 2>&1 &
 echo Started web server, port 8082
