@@ -41,7 +41,7 @@ pipeline {
                 expression { GIT_BRANCH ==~ /develop/ }
             }
             steps {
-                echo " ============== mvn package master =================="
+                echo " ============== mvn package develop =================="
                 sh "mvn clean package"
             }
         }
