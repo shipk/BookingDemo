@@ -1,7 +1,4 @@
 #!/bin/bash
-trap 'echo Got SIGINT!' SIGINT
-trap 'echo Got SIGHUP!' SIGHUP
-
 p=`ps -ef | grep 'target/BookingDemo-0.0.1-SNAPSHOT.war' | grep -v 'grep' | awk '{print $2}'`
 if [ "$p" != "" ]
 then
