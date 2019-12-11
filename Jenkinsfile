@@ -52,7 +52,7 @@ pipeline {
             steps {
                 echo " ============== mvn deploy master =================="
                 sh '''#!/bin/bash 
-                    ./bd_stop_n_start_war.sh > /tmp/bd_stop_n_start.out
+                    ./bd_stop_n_start_war.sh > /tmp/bd_stop_n_start.out &
                 '''
             }
         }
