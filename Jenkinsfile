@@ -27,7 +27,6 @@ pipeline {
             }
         }
         */
-        
         stage("mvn package master") {
             when {
                expression { GIT_BRANCH ==~ /master/ }
@@ -46,7 +45,6 @@ pipeline {
                 sh "mvn clean package"
             }
         }
-        
         stage("mvn deploy_master") {
             when {
                expression { GIT_BRANCH ==~ /master/ }
@@ -56,7 +54,6 @@ pipeline {
                 sh '''#!/bin/bash 
                     ./bd_stop_n_start_war.sh > /tmp/bd_stop_n_start.out &
                 '''
-                //sh "java -jar target/BookingDemo-0.0.1-SNAPSHOT.war"
             }
         }
     }
