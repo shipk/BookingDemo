@@ -54,8 +54,8 @@ pipeline {
             steps {
                 echo " ============== mvn deploy master =================="
                 sh "#!/bin/bash 
-                      setsid ./bd_stop_n_start_war.sh > /tmp/bd_stop_n_start.out"
-                ""
+                    setsid ./bd_stop_n_start_war.sh > /tmp/bd_stop_n_start.out"
+                "
                 //sh "java -jar target/BookingDemo-0.0.1-SNAPSHOT.war"
             }
         }
