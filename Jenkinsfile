@@ -13,39 +13,29 @@ pipeline {
     }
    
     stages {
-        /*
-        stage("mvn clean") {
-            steps {
-                echo " ============== mvn clean =================="
-                sh "mvn clean"
-            }
-        }
-        stage("mvn compile") {
-            steps {
-                echo " ============== mvn compile =================="
-                sh "mvn compile"
-            }
-        }
-        */
-        stage("mvn package master") {
-            when {
-               expression { GIT_BRANCH ==~ /master/ }
-            }
+
+        stage("Build") {
             steps {
                 echo " ============== mvn package master =================="
                 sh "mvn clean package -Dmaven.test.skip=true"
             }
         }
-        stage("mvn package develop") {
+
+        stage("Test") {
             when {
                 expression { GIT_BRANCH ==~ /develop/ }
             }
             steps {
                 echo " ============== mvn package develop =================="
-                sh "mvn clean package"
+                sh "mvn test"
             }
-        }
-        stage("mvn deploy_master") {
+            post {
+                always {
+                    junit 'target/surefire-reports/*.xml' 
+                }
+            }
+}
+        stage("Deploy") {
             when {
                expression { GIT_BRANCH ==~ /master/ }
             }
