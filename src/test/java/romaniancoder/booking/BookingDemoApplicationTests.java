@@ -1,22 +1,4 @@
 package romaniancoder.booking;
-/*
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.test.context.web.WebAppConfiguration;
-import org.springframework.boot.test.SpringApplicationConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-
-@RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = BookingDemoApplication.class)
-@WebAppConfiguration
-public class BookingDemoApplicationTests {
-
-	@Test
-	public void contextLoads() {
-	}
-
-}
-*/
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -28,7 +10,17 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class BookingDemoApplicationTests {
 
 	@Test
-	public void contextLoads() {
+	public void tst1() {
+		assert( 1 == 1) ;
+	}
+
+	@Test
+	public void tst2() {
+		assert( 1 == 1) ;
+	}
+
+	@Test
+	public void tst3() {
 		assert( 1 == 1) ;
 	}
 
