@@ -11,17 +11,17 @@ public class BookingDemoApplicationTests {
 
 	@Test
 	public void tst1() {
-		assert( 1 == 1) ;
+		assert(1 == 1) ;
 	}
 
 	@Test
 	public void tst2() {
-		assert( 1 == 1) ;
+		assert(1 == 1) ;
 	}
 
 	@Test
 	public void tst3() {
-		assert( 1 == 1) ;
+		assert(1 == 1) ;
 	}
 
 }
